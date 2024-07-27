@@ -9,22 +9,22 @@ using SistemaIgreja.Models;
 
 namespace SistemaIgreja.Controllers
 {
-    public class CadastrosController : Controller
+    public class CadastroController : Controller
     {
         private readonly Context _context;
 
-        public CadastrosController(Context context)
+        public CadastroController(Context context)
         {
             _context = context;
         }
 
-        // GET: Cadastros
+        // GET: Cadastro
         public async Task<IActionResult> Index()
         {
             return View(await _context.Cadastro.ToListAsync());
         }
 
-        // GET: Cadastros/Details/5
+        // GET: Cadastro/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,13 +42,13 @@ namespace SistemaIgreja.Controllers
             return View(cadastro);
         }
 
-        // GET: Cadastros/Create
+        // GET: Cadastro/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Cadastros/Create
+        // POST: Cadastro/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -64,7 +64,7 @@ namespace SistemaIgreja.Controllers
             return View(cadastro);
         }
 
-        // GET: Cadastros/Edit/5
+        // GET: Cadastro/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,7 +80,7 @@ namespace SistemaIgreja.Controllers
             return View(cadastro);
         }
 
-        // POST: Cadastros/Edit/5
+        // POST: Cadastro/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -115,7 +115,7 @@ namespace SistemaIgreja.Controllers
             return View(cadastro);
         }
 
-        // GET: Cadastros/Delete/5
+        // GET: Cadastro/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,7 +133,7 @@ namespace SistemaIgreja.Controllers
             return View(cadastro);
         }
 
-        // POST: Cadastros/Delete/5
+        // POST: Cadastro/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
